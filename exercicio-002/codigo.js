@@ -11,6 +11,12 @@ const resposta = document.querySelector('.resposta')
 
 
 function analisarValor() {
+    if (inputValor.value === '') {
+        alert('Digite um valor primeiro.')
+        inputValor.focus()
+        return
+    }
+
     const pi = Number(inputValor.value)
 
     if (pi === 3.14159) {

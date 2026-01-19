@@ -12,10 +12,27 @@ const btnNovoValor = document.querySelector('.btnNovoValor')
 
 
 function escreverMensagem() {
-    const idade = inputIdade.value
-    const peso = inputPeso.value
+    if (inputIdade.value === '') {
+        alert('Digite sua idade.')
+        inputIdade.focus()
+        return
+    }
 
-    mensagem.innerHTML = `<p>Sua idade é ${idade} anos e seu peso é ${peso}kg.<p>`
+    if (inputPeso.value === '') {
+        alert('Digite seu peso.')
+        inputPeso.focus()
+        return
+    }
+
+    const idade = Number(inputIdade.value)
+    const peso = Number(inputPeso.value)
+
+    if (idade <= 0 || peso <= 0) {
+        alert('Valores menores ou iguais a zero não são válidos.')
+        return
+    }
+
+    mensagem.innerHTML = `<p>Sua idade é ${idade} ano(s) e seu peso é ${peso}kg.<p>`
 
     btnMensagem.style.display = 'none'
     btnNovoValor.style.display = 'inline-block'

@@ -11,6 +11,12 @@ const resposta = document.querySelector('.resposta')
 
 
 function analisarValor() {
+    if (inputValor.value === '') {
+        alert('Digite um valor primeiro.')
+        inputValor.focus()
+        return
+    }
+
     const valorDigitado = Number(inputValor.value)
     const numeroMaximo = Number.MAX_VALUE
 
