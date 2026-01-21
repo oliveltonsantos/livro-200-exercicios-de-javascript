@@ -1,9 +1,3 @@
-/* Descrição do exercício:
-
-Declare uma constante chamada "PI", atribua o valor de Pi a ela e imprima o valor na console.
-
-*/
-
 const inputValor = document.getElementById('valor')
 const btnAnalisar = document.querySelector('.btnAnalisar')
 const btnNovaAnalise = document.querySelector('.btnNovaAnalise')
@@ -17,12 +11,13 @@ function analisarValor() {
         return
     }
 
-    const pi = Number(inputValor.value)
+    const valorDigitado = Number(inputValor.value)
+    const numeroMaximo = Number.MAX_VALUE
 
-    if (pi === 3.14159) {
-        resposta.innerHTML = '<p>Resposta correta!<p>'
+    if (valorDigitado === numeroMaximo) {
+        resposta.innerHTML = `<p>Resposta correta. O valor máximo é igual a ${numeroMaximo}</p>`
     } else {
-        resposta.innerHTML = '<p>Resposta errada. Tente de novo.<p>'
+        resposta.innerHTML = '<p>Resposta incorreta. Tente novamente.</p>'
     }
 
     btnAnalisar.style.display = 'none'
@@ -31,12 +26,15 @@ function analisarValor() {
 
 
 function novaAnalise() {
-    btnAnalisar.style.display = 'inline-block'
-    btnNovaAnalise.style.display = 'none'
-
     inputValor.value = ''
     inputValor.focus()
 
+    btnAnalisar.style.display = 'inline-block'
+    btnNovaAnalise.style.display = 'none'
+
     resposta.innerHTML = ''
 }
+
+
+
 

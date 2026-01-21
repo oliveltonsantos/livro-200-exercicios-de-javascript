@@ -1,9 +1,3 @@
-/* Descrição do exercício:
-
-Declare uma variável chamada "númeroMáximo", atribua a ela o valor máximo que um número pode ter em JavaScript e imprima o valor na console.
-
-*/
-
 const inputValor = document.getElementById('valor')
 const btnAnalisar = document.querySelector('.btnAnalisar')
 const btnNovaAnalise = document.querySelector('.btnNovaAnalise')
@@ -17,13 +11,12 @@ function analisarValor() {
         return
     }
 
-    const valorDigitado = Number(inputValor.value)
-    const numeroMaximo = Number.MAX_VALUE
+    const pi = Number(inputValor.value)
 
-    if (valorDigitado === numeroMaximo) {
-        resposta.innerHTML = `<p>Resposta correta. O valor máximo é igual a ${numeroMaximo}</p>`
+    if (pi === 3.14159) {
+        resposta.innerHTML = '<p>Resposta correta!<p>'
     } else {
-        resposta.innerHTML = '<p>Resposta incorreta. Tente novamente.</p>'
+        resposta.innerHTML = '<p>Resposta errada. Tente de novo.<p>'
     }
 
     btnAnalisar.style.display = 'none'
@@ -32,15 +25,12 @@ function analisarValor() {
 
 
 function novaAnalise() {
-    inputValor.value = ''
-    inputValor.focus()
-
     btnAnalisar.style.display = 'inline-block'
     btnNovaAnalise.style.display = 'none'
 
+    inputValor.value = ''
+    inputValor.focus()
+
     resposta.innerHTML = ''
 }
-
-
-
 

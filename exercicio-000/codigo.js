@@ -1,6 +1,0 @@
-/* Descrição do exercício:
-
-
-*/
-
-

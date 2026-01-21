@@ -1,9 +1,3 @@
-/* Descrição do exercício:
-
-Declare duas variáveis chamadas "nome" e "sobrenome", atribua o seu nome e sobrenome a elas. Concatene-as em uma terceira variável chamada "nomeCompleto" e imprima.
-
-*/
-
 const inputNome = document.getElementById('nome')
 const inputSobrenome = document.getElementById('sobrenome')
 const btnEscreverNome = document.querySelector('.btnEscreverNome')

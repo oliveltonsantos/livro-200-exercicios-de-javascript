@@ -1,9 +1,3 @@
-/* Descrição do exercício:
-
-Declare duas variáveis e atribua valores numéricos a elas. Use o operador de adição para realizar operações entre as duas variáveis. Imprima o resultado.
-
-*/
-
 const inputNumero1 = document.getElementById('numero1')
 const inputNumero2 = document.getElementById('numero2')
 const btnSomar = document.querySelector('.btnSomar')
