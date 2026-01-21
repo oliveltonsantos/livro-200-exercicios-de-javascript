@@ -8,17 +8,16 @@ let contador = 0
 
 
 function aumentarValor() {
-   
     contador++
 
-    valorAtual.innerHTML = `<p>Valor atual = ${contador}<p>`
+    valorAtual.innerHTML = `<p>Valor atual = ${contador}</p>`
 
     mensagens.style.display = 'none'
 
     if (contador === 5) {
-        alert(`Você já clicou ${contador} vezes. 👏🎉`)
-    } else if (contador >= 10){
-        alert(`⚠️ Você já chegou no limite máximo de ${contador}.`)
+        alert(`Parabéns! Você clicou ${contador} vezes. 👏🎉`)
+    } else if (contador >= 10) {
+        alert(`✋ Você chegou no limite máximo de ${contador}.`)
         btnAumentarValor.style.display = 'none'
     }
 }
@@ -31,7 +30,7 @@ function resetarValor() {
 
     mensagens.style.display = 'inline-block'
 
-    mensagens.innerHTML = 'Clique no botão abaixo.'
+    mensagens.innerHTML = 'Clique no botão abaixo. 👇'
 
     btnAumentarValor.style.display = 'inline-block'
 }
