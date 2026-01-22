@@ -8,6 +8,3 @@ No Brasil:
     - O voto é obrigatório para pessoas entre 18 e 70 anos.
     - Facultativo para pessoas com 16 ou 17 anos ou acima de 70. 
     - Menores de 16 anos não votam.
-
-
-    
