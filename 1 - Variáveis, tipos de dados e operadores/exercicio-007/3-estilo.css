@@ -1,3 +1,11 @@
+/* Código extra */
+
+.btnNovaComparacao {
+    display: none;
+}
+
+/* Código padrão */
+
 * {
     box-sizing: border-box;
 }
@@ -57,6 +65,3 @@ button {
     margin: 10px;
 }
 
-.btnNovaComparacao {
-    display: none;
-}

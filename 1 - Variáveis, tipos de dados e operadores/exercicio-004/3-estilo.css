@@ -1,3 +1,11 @@
+/* Código extra */
+
+.btnNovoNome {
+    display: none;
+}
+
+/* Código padrão */
+
 * {
     box-sizing: border-box;
 }
@@ -55,8 +63,4 @@ button {
     padding: 10px;
     cursor: pointer;
     margin: 10px;
-}
-
-.btnNovoNome {
-    display: none;
 }
