@@ -57,4 +57,6 @@ function compararValores() {
 
 */
 
-let  num = 10 ; num++; console .log( "Número incrementado: " , num);
+let nome = "Lúmina";
+console.log(nome[nome.length - 2]);
+
