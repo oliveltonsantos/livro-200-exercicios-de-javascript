@@ -14,6 +14,7 @@ function verificarPalavra() {
     const palavra = inputPalavra.value
         .toLowerCase()
         .trim()
+        .replaceAll(" ", "")
 
     if (palavra.length < 3) {
         alert('Digite uma palavra com mais de duas letras.')
@@ -23,10 +24,18 @@ function verificarPalavra() {
 
     let mensagem = ''
 
-    if (palavra[0] === palavra[palavra.length - 1] && palavra[1] === palavra[palavra.length - 2]) {
+    let inicio = 0
+    let fim = palavra.length - 1 // Pega a letra do último índice
+
+    while (inicio < fim) {
+        if (palavra[inicio] !== palavra[fim]) {
+            mensagem = 'Não é palíndromo.'
+            break
+        }
+        inicio++
+        fim--
+
         mensagem = 'É palíndromo.'
-    } else {
-        mensagem = 'Não é palíndromo.'
     }
 
     resposta.innerHTML = `<p>${mensagem}</p>`
