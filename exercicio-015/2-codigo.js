@@ -12,9 +12,10 @@ function verificarPalavra() {
     }
 
     const palavra = inputPalavra.value
-        .toLowerCase()
-        .trim()
-        .replaceAll(" ", "")
+        .toLowerCase() // transforma letras maiúsculas em minúsculas
+        .normalize('NFD') // separa as letras do acento
+        .replaceAll(/[\u0300-\u036f]/g, "") // remove os acentos
+        .replaceAll(/[^a-z0-9]/g, "") // remove tudo o que não é letra ou número
 
     if (palavra.length < 3) {
         alert('Digite uma palavra com mais de duas letras.')
@@ -54,5 +55,9 @@ function novaPalavra() {
 
     resposta.innerHTML = ''
 }
+
+
+
+
 
 
