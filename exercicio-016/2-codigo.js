@@ -8,22 +8,18 @@ const resposta = document.querySelector('.resposta')
 
 
 function compararNumeros() {
-    let inputEstaVazio = false
+    let inputEstaVazio = null // null: significa que “não existe valor”
 
-    todosInputs.forEach(input => {
+    for (const input of todosInputs) {
         if (input.value === '') {
-            inputEstaVazio = true
+            inputEstaVazio = input
+            break
         }
-    })
+    }
 
     if (inputEstaVazio) {
         alert('Digite 3 números para comparar.')
-        todosInputs.forEach(input => {
-            if (input.value === '') {
-                input.focus()
-            }
-
-        })
+        inputEstaVazio.focus()
         return
     }
 
@@ -33,7 +29,9 @@ function compararNumeros() {
 
     let mensagem = ''
 
-    if (num1 > num2 && num1 > num3) {
+    if (num1 === num2 && num2 === num3) {
+        mensagem = 'Todos os números são iguais.'
+    } else if (num1 > num2 && num1 > num3) {
         mensagem = `${num1} é o maior.`
     } else if (num2 > num1 && num2 > num3) {
         mensagem = `${num2} é o maior.`
