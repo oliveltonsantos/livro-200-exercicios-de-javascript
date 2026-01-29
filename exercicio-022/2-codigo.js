@@ -22,10 +22,13 @@ function diasDoMes() {
 
     let resposta = ''
 
-    if ((mes <= 7 && mes % 2 !== 0) || (mes > 7 && mes % 2 === 0)) {
-        resposta = '31 dias'
-    } else if (mes === 2) {
+    if (mes === 2) {
         resposta = '28 ou 29 dias.'
+    } else if (
+        (mes <= 7 && mes % 2 !== 0) ||
+        (mes > 7 && mes % 2 === 0)
+    ) {
+        resposta = '31 dias'
     } else {
         resposta = '30 dias.'
     }
