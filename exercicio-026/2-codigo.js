@@ -9,6 +9,7 @@ const mensagem = document.querySelector('.mensagem')
 function contarImpares() {
     let inputVazio = null
 
+    // Verifica se os campos foram preenchidos
     for (const input of todosInputs) {
         if (input.value === '') {
             inputVazio = input
@@ -22,6 +23,19 @@ function contarImpares() {
         return
     }
 
+    // Verifica se foi digitado número decimal (ex: 1.5)
+    const inputDecimal = [...todosInputs].find(input => {
+        const valor = Number(input.value)
+        return !Number.isInteger(valor)
+    })
+
+    if (inputDecimal) {
+        alert('Digite apenas números inteiros.')
+        inputDecimal.value = ''
+        inputDecimal.focus()
+        return
+    }
+
     const inicio = Number(inputInicio.value)
     const fim = Number(inputFim.value)
 
@@ -29,11 +43,6 @@ function contarImpares() {
         alert('O valor inicial deve ser menor que o valor final.')
         inputInicio.value = ''
         inputInicio.focus()
-        return
-    }
-
-    if (!Number.isInteger(inicio) || !Number.isInteger(fim)) {
-        alert('Digite apenas números inteiros.')
         return
     }
 
