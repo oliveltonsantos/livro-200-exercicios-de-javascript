@@ -1,2 +1,1 @@
-let  i = 1; do  {     if (i % 2  != 0 ){         console .log(i);    }    i++; } while (i <= 20 );
-
+for ( let  i = 1 ; i <= 10 ; i++){     console .log( "5 x "  + i + " > "  + 5 *i); }
