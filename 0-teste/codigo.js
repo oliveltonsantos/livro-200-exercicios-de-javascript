@@ -1,1 +1,1 @@
-for ( let  i = 1 ; i <= 10 ; i++){     console .log( "5 x "  + i + " > "  + 5 *i); }
+let  i = 1 ; let  soma = 0 ; while (i <= 100 ){    soma += i;    i++; } console .log(soma);
