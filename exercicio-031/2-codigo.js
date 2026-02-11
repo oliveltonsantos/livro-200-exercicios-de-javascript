@@ -38,6 +38,7 @@ function adivinharNumero() {
 
         if (listaNumeros[indiceDoMeio] === numeroDoUsuario) {
             resultado = listaNumeros[indiceDoMeio]
+            break
         }
 
         if (numeroDoUsuario < listaNumeros[indiceDoMeio]) {
