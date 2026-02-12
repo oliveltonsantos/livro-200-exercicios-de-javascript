@@ -20,6 +20,7 @@ function contagem() {
         return
     }
 
+
     let contador = 1
     let resultado = ''
     let lista = []
@@ -39,7 +40,8 @@ function contagem() {
         contador++
     }
 
-    mensagem.innerHTML = `<p>${lista.join(' > ')}</p>`
+
+    mensagem.innerHTML = `<p>${lista.join('<br>')}</p>`
 
     btnContagem.style.display = 'none'
     btnNovaContagem.style.display = 'inline-block'
