@@ -1,1 +1,1 @@
-for ( let  n = 1 ; n <= 10 ; n++) {     let  triangular = n * (n+ 1 ) / 2 ;     console .log(triangular); }
+let  somaCubos = 0 ; let  i = 1 ; do  {    somaCubos += i*i*i;    i++; } while  (i <= 25 ); console .log(somaCubos);

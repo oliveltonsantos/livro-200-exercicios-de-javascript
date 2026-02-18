@@ -1,12 +1,12 @@
 const inputQuantidade = document.getElementById('quantidade')
-const btnSomarQuadrados = document.querySelector('.btnSomarQuadrados')
+const btnSomarCubos = document.querySelector('.btnSomarCubos')
 const btnNovaSoma = document.querySelector('.btnNovaSoma')
 const mensagem = document.querySelector('.mensagem')
 
 
-function somarQuadrados() {
+function somarCubos() {
     if (inputQuantidade.value === '') {
-        alert('Digite uma quantidade de números.')
+        alert('Digite uma quantidade.')
         inputQuantidade.focus()
         return
     }
@@ -14,7 +14,7 @@ function somarQuadrados() {
     const quantidade = Number(inputQuantidade.value)
 
     if (quantidade <= 0) {
-        alert('Digite uma quantidade mínima de 1 número.')
+        alert('Digite uma quantidade mínima de 1.')
         inputQuantidade.value = ''
         inputQuantidade.focus()
         return
@@ -29,18 +29,18 @@ function somarQuadrados() {
 
 
     let contador = 1
-    let somaTotalQuadrados = 0
+    let somaDosCubos = 0
 
-    while (contador <= quantidade) {
-        const numeroAoQuadrado = contador * contador
-        somaTotalQuadrados += numeroAoQuadrado
+    do {
+        const numeroAoCubo = contador ** 3
+        somaDosCubos += numeroAoCubo
         contador++
-    }
+    } while (contador <= quantidade);
 
 
-    mensagem.innerHTML = `<p>Soma dos quadrados de 1 até ${quantidade} = ${somaTotalQuadrados}</p>`
+    mensagem.innerHTML = `<p>Soma dos cubos de 1 até ${quantidade} = ${somaDosCubos}</p>`
 
-    btnSomarQuadrados.style.display = 'none'
+    btnSomarCubos.style.display = 'none'
     btnNovaSoma.style.display = 'inline-block'
 }
 
@@ -49,12 +49,8 @@ function novaSoma() {
     inputQuantidade.value = ''
     inputQuantidade.focus()
 
-    btnSomarQuadrados.style.display = 'inline-block'
+    btnSomarCubos.style.display = 'inline-block'
     btnNovaSoma.style.display = 'none'
 
     mensagem.innerHTML = ''
 }
-
-
-
-
