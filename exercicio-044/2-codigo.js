@@ -5,28 +5,36 @@ const listaNumeros = document.querySelector('.listaNumeros')
 const resultado = document.querySelector('.resultado')
 
 const matrizA = []
-matrizA.length = 2
-
 const matrizB = []
-matrizB.length = 2
+
+let linha = 0
+let coluna = 0
+const tamanho = 2
+
+let fase = 'A'
+let matrizAtual = matrizA
 
 function adicionarNumero() {
 
     const numero = Number(inputNumero.value)
 
-    let i = 0
+    if (!matrizAtual[linha]) {
+        matrizAtual[linha] = []
+    }
 
-    do {
-            matrizA[i] = []
-            // matrizA[i].length = 2
+    matrizAtual[linha][coluna] = numero
 
-            for (let j = 0; j < 2; j++) {
-                matrizA[i][j] = numero
-            }
-        i++
-    } while (i < matrizA.length);
+    coluna++
 
-    console.log(matrizA)
+    if (coluna === tamanho) {
+        coluna = 0
+        linha++
+
+    }
+
+    if (linha === tamanho && fase === 'A') {
+        resultado.innerHTML = `${matrizAtual}`
+    }
 
 }
 
