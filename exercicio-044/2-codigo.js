@@ -4,12 +4,14 @@ const btnNovaSoma = document.querySelector('.btnNovaSoma')
 const listaNumeros = document.querySelector('.listaNumeros')
 const mensagem = document.querySelector('.mensagem')
 
+
 const matrizA = []
 const matrizB = []
 const matrizResultado = []
 
 let linha = 0
 let coluna = 0
+
 const tamanho = 2
 
 let fase = 'A' // controle de fase (deve ser global pois é estado do programa e não da função)
@@ -18,8 +20,14 @@ let matrizAtual = matrizA
 
 
 function adicionarNumero() {
+    if (inputNumero.value === '') {
+        alert('Digite um número para adicionar na matriz.')
+        inputNumero.focus()
+        return
+    }
 
     const numero = Number(inputNumero.value)
+
 
     if (!matrizAtual[linha]) {
         matrizAtual[linha] = []
@@ -34,11 +42,12 @@ function adicionarNumero() {
         linha++
     }
 
+
     inputNumero.value = ''
     inputNumero.focus()
 
     mensagem.innerHTML =
-        `<p>Matriz ${nomeDaMatriz}:</p>` + 
+        `<p>Matriz ${nomeDaMatriz}:</p>` +
         matrizAtual
             .map(linha => `[${linha.join(' , ')}]`)
             .join('<br>')
@@ -51,7 +60,7 @@ function adicionarNumero() {
         linha = 0
         coluna = 0
     } else if (linha === tamanho && fase === 'B') {
-        
+
         let l = 0
 
         do {
@@ -63,10 +72,36 @@ function adicionarNumero() {
             l++
         } while (l < tamanho)
 
-        mensagem.innerHTML = `
-            <p>${matrizResultado}</p>
-        `
-    }
+        mensagem.innerHTML =
+            `<p>Matriz A + Matriz B é igual:</p>` +
+            matrizResultado
+                .map(linha => `[${linha.join(' , ')}]`)
+                .join('<br>')
 
-    
-}  
+        inputNumero.disabled = true
+        btnAdicionarNumero.style.display = 'none'
+        btnNovaSoma.style.display = 'inline-block'
+    }
+}
+
+
+function novaSoma() {
+    matrizA.length = 0
+    matrizB.length = 0
+
+    linha = 0
+    coluna = 0
+
+    fase = 'A'
+    nomeDaMatriz = 'A'
+    matrizAtual = matrizA
+
+    inputNumero.disabled = false
+    inputNumero.value = ''
+    inputNumero.focus()
+
+    btnAdicionarNumero.style.display = 'inline-block'
+    btnNovaSoma.style.display = 'none'
+
+    mensagem.innerHTML = ''
+}
