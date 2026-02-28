@@ -28,7 +28,7 @@ function adicionarNumero() {
 
     const numero = Number(inputNumero.value)
 
-
+    // cria uma linha se ela ainda não existir  
     if (!matrizAtual[linha]) {
         matrizAtual[linha] = []
     }
@@ -49,10 +49,11 @@ function adicionarNumero() {
     mensagem.innerHTML =
         `<p>Matriz ${nomeDaMatriz}:</p>` +
         matrizAtual
-            .map(linha => `[${linha.join(' , ')}]`)
+            .map(l => `[${l.join(' , ')}]`)
             .join('<br>')
 
 
+    // Troca o preenchimento da matriz A pela B
     if (linha === tamanho && fase === 'A') {
         fase = 'B'
         matrizAtual = matrizB
@@ -61,22 +62,26 @@ function adicionarNumero() {
         coluna = 0
     } else if (linha === tamanho && fase === 'B') {
 
-        let l = 0
+        let l = 0 // "l" é linha e "c" é coluna
+
 
         do {
-            matrizResultado[l] = []
+            matrizResultado[l] = [] // cria uma linha na matrizResultado
 
-            for (let j = 0; j < tamanho; j++) {
-                matrizResultado[l][j] = matrizA[l][j] + matrizB[l][j]
+            for (let c = 0; c < tamanho; c++) {
+                matrizResultado[l][c] = matrizA[l][c] + matrizB[l][c]
             }
+
             l++
         } while (l < tamanho)
+
 
         mensagem.innerHTML =
             `<p>Matriz A + Matriz B é igual:</p>` +
             matrizResultado
-                .map(linha => `[${linha.join(' , ')}]`)
+                .map(l => `[${l.join(' , ')}]`)
                 .join('<br>')
+
 
         inputNumero.disabled = true
         btnAdicionarNumero.style.display = 'none'
@@ -88,6 +93,7 @@ function adicionarNumero() {
 function novaSoma() {
     matrizA.length = 0
     matrizB.length = 0
+    matrizResultado.length = 0
 
     linha = 0
     coluna = 0
