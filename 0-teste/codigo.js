@@ -1,12 +1,1 @@
-let  matriz1 = [[ 1 , 2 ], [ 3 , 4 ]]; 
-let  matriz2 = [[ 5 , 6 ], [ 7 , 8 ]]; let  soma = []; let  i = 0 ; do  {     let  j = 0 ;    soma[i] = [];     do  {        soma[i][j] = matriz1[i][j] + matriz2[i][j];        j++;    } while  (j < matriz1[i].length);    i++; } while  (i < matriz1.length); 
-
-//console .log( `A soma das matrizes é ${ JSON .stringify(soma)}` );
-
-console.log( `A soma das matrizes é ${soma}` );
-
-
-
-
-
-
+function   calcularFibonacci (n) {     let  a = 0 ;     let  b = 1 ;     for ( let  i = 2 ; i <= n; i++) {         let  temp = a;        a = b;        b = temp + b;    }     return  b; } console .log(calcularFibonacci(0)); // Saída: 13
