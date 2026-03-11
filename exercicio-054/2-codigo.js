@@ -3,7 +3,9 @@ const btnAdicionarNumero = document.querySelector('.btnAdicionarNumero')
 const btnNovoNumero = document.querySelector('.btnNovoNumero')
 const mensagem = document.querySelector('.mensagem')
 
+
 let listaNumeros = []
+
 
 function adicionarNumero() {
     if (inputNumero.value === '') {
@@ -24,9 +26,13 @@ function adicionarNumero() {
     if (listaNumeros.length > 4) {
         alert('Lista completa.')
 
-        mensagem.innerHTML = `<p>${ordenarNumeros(listaNumeros).join(' > ')}</p>`
-    }
+        mensagem.innerHTML = `<p>Ordem decrescente: ${ordenarNumeros(listaNumeros).join(' > ')}</p>`
 
+        inputNumero.disabled = true
+
+        btnAdicionarNumero.style.display = 'none'
+        btnNovoNumero.style.display = 'inline-block'
+    }
 }
 
 
@@ -43,7 +49,7 @@ function ordenarNumeros(lista) {
 
             for (let j = 0; j < novoArray.length; j++) {
 
-                if (lista[i] < novoArray[j]) {
+                if (lista[i] > novoArray[j]) {
 
                     // desloca os números
                     for (let k = novoArray.length; k > j; k--) {
@@ -69,3 +75,14 @@ function ordenarNumeros(lista) {
 }
 
 
+function novoNumero() {
+    listaNumeros.length = 0
+
+    inputNumero.disabled = false
+    inputNumero.focus()
+
+    btnAdicionarNumero.style.display = 'inline-block'
+    btnNovoNumero.style.display = 'none'
+
+    mensagem.innerHTML = ''
+}
