@@ -4,7 +4,7 @@ const btnNovoNumero = document.querySelector('.btnNovoNumero')
 const mensagem = document.querySelector('.mensagem')
 
 
-let listaNumeros = []
+const listaNumeros = []
 
 
 function adicionarNumero() {

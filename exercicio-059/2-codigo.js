@@ -18,7 +18,7 @@ function adicionarNumero() {
 
     listaNumeros.push(numero)
 
-    mensagem.innerHTML = `<p>Números adicionados: ${listaNumeros.join(' > ')}</p>`
+    mensagem.innerHTML = `<p>Número adicionado: ${listaNumeros.join(' > ')}</p>`
 
     inputNumero.value = ''
     inputNumero.focus()
@@ -26,7 +26,7 @@ function adicionarNumero() {
     if (listaNumeros.length > 4) {
         alert('Lista completa.')
 
-        mensagem.innerHTML = `<p>Menor número: ${verificarMenorNumero(listaNumeros)}</p>`
+        mensagem.innerHTML = `<p>Números duplicados: ${duplicarNumeros(listaNumeros).join(' > ')}<p>`
 
         inputNumero.disabled = true
 
@@ -36,22 +36,20 @@ function adicionarNumero() {
 }
 
 
-function verificarMenorNumero(lista) {
+function duplicarNumeros(lista) {
 
-    let menorNumero = lista[0]
+    const duplicados = []
 
     for (i = 0; i < lista.length; i++) {
-        if (lista[i] < menorNumero) {
-            menorNumero = lista[i]
-        }
+        duplicados.push(lista[i] * 2)
     }
 
-    return menorNumero
+    return duplicados
 }
 
 
 function novoNumero() {
-    listaNumeros.length = ''
+    listaNumeros.length = 0
 
     inputNumero.disabled = false
     inputNumero.focus()
@@ -61,6 +59,3 @@ function novoNumero() {
 
     mensagem.innerHTML = ''
 }
-
-
-

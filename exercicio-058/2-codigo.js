@@ -23,10 +23,10 @@ function adicionarNumero() {
     inputNumero.value = ''
     inputNumero.focus()
 
-    if (listaNumeros.length > 4) {
+    if (listaNumeros.length > 5) {
         alert('Lista completa.')
 
-        mensagem.innerHTML = `<p>Menor número: ${verificarMenorNumero(listaNumeros)}</p>`
+        mensagem.innerHTML = `<p>Soma dos pares: ${somarPares(listaNumeros)}</p>`
 
         inputNumero.disabled = true
 
@@ -36,22 +36,21 @@ function adicionarNumero() {
 }
 
 
-function verificarMenorNumero(lista) {
+function somarPares(lista) {
 
-    let menorNumero = lista[0]
-
-    for (i = 0; i < lista.length; i++) {
-        if (lista[i] < menorNumero) {
-            menorNumero = lista[i]
+    const soma = lista.reduce((acumulador, numAtual) => {
+        if (numAtual % 2 === 0) {
+            return acumulador + numAtual
         }
-    }
+        return acumulador
+    }, 0)
 
-    return menorNumero
+    return soma
 }
 
 
 function novoNumero() {
-    listaNumeros.length = ''
+    listaNumeros.length = 0
 
     inputNumero.disabled = false
     inputNumero.focus()
@@ -61,6 +60,4 @@ function novoNumero() {
 
     mensagem.innerHTML = ''
 }
-
-
 

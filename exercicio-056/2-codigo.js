@@ -4,7 +4,7 @@ const btnNovoNumero = document.querySelector('.btnNovoNumero')
 const mensagem = document.querySelector('.mensagem')
 
 
-const listaNumeros = []
+const listaNumero = []
 
 
 function adicionarNumero() {
@@ -16,17 +16,17 @@ function adicionarNumero() {
 
     const numero = Number(inputNumero.value)
 
-    listaNumeros.push(numero)
+    listaNumero.push(numero)
 
-    mensagem.innerHTML = `<p>Números adicionados: ${listaNumeros.join(' > ')}</p>`
+    mensagem.innerHTML = `<p>Número adicionado: ${listaNumero.join(' > ')}</p>`
 
     inputNumero.value = ''
     inputNumero.focus()
 
-    if (listaNumeros.length > 4) {
+    if (listaNumero.length > 4) {
         alert('Lista completa.')
 
-        mensagem.innerHTML = `<p>Menor número: ${verificarMenorNumero(listaNumeros)}</p>`
+        mensagem.innerHTML = `<p>Maior número = ${verificarMaiorNumero(listaNumero)}</p>`
 
         inputNumero.disabled = true
 
@@ -36,22 +36,21 @@ function adicionarNumero() {
 }
 
 
-function verificarMenorNumero(lista) {
-
-    let menorNumero = lista[0]
+function verificarMaiorNumero(lista) {
+    let maiorNumero = lista[0]
 
     for (i = 0; i < lista.length; i++) {
-        if (lista[i] < menorNumero) {
-            menorNumero = lista[i]
+        if (lista[i] > maiorNumero) {
+            maiorNumero = lista[i]
         }
     }
 
-    return menorNumero
+    return maiorNumero
 }
 
 
 function novoNumero() {
-    listaNumeros.length = ''
+    listaNumero.length = 0
 
     inputNumero.disabled = false
     inputNumero.focus()
@@ -61,6 +60,3 @@ function novoNumero() {
 
     mensagem.innerHTML = ''
 }
-
-
-
