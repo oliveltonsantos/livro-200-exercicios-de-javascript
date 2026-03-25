@@ -48,6 +48,17 @@ function calcularRaizQuadrada(lista) {
 
     for (i = 0; i <= lista.length; i++) {
 
+        /*
+            No for tinha feito "j <= lista[i]": j iria rodar enquanto fosse menor que o número atual da lista.
+
+            Quando faço "j * j <= lista[i]": estou otimizando a quantidade de repetições do for.
+
+            Exemplo: raiz quadrada de 36.
+
+            j <= lista[i] (sem otimização): for repete 36 vezes
+            j * j <= lista[i] (otimizado): for roda 7 vezes
+        */
+
         for (let j = 0; j * j <= lista[i]; j++) {
             if (j * j === lista[i]) {
                 listaRaizQuadrada.push(j)
