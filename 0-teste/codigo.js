@@ -1,7 +1,13 @@
-let datas = [
- new Date("2022-01-01"),
- new Date("2020-05-10"),
- new Date("2023-03-15")
-];
+const decoradores = [
+  (texto) => `💪 ${texto}`,
+  (texto) => `${texto} 🤳`,
+  (texto) => `<p>${texto}</p>`
+]
 
-console.log(datas.sort((a, b) => a - b));
+let resultado = 'Olá'
+
+decoradores.forEach(func => {
+  resultado = func(resultado)
+})
+
+console.log(resultado)
