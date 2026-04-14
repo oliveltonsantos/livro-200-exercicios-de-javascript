@@ -1,3 +1,8 @@
 
 
+// Interação com usuário
+
+
+// Reset
+
 
