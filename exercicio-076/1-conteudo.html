@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de logica de programação</title>
+    <link rel="stylesheet" href="3-estilo.css">
+</head>
+
+<body>
+    <section class="design-section">
+
+        <h1>Informações sobre o livro</h1>
+
+        <p>Preencha as informações abaixo:</p>
+
+        <p>Nome: <input type="text" name="nome" id="nome"></p>
+
+        <p>Preço: <input type="number" name="preco" id="preco"></p>
+
+        <p>Disponível no estoque ("S" - Sim / "N" - Não): <input type="text" name="estoque" id="estoque"></p>
+
+        <button onclick="adicionarLivro()" class="btnAdicionarLivro">Adicionar livro</button>
+
+        <button onclick="novoLivro()" class="btnNovoLivro">Novo livro</button>
+
+        <div class="mensagem"></div>
+
+    </section>
+
+    <script src="./2-codigo.js"></script>
+
+</body>
+
+</html>

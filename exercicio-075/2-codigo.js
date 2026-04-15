@@ -56,4 +56,3 @@ function novoValor() {
 
     mensagem.innerHTML = ''
 }
-
