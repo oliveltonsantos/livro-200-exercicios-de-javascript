@@ -6,12 +6,12 @@ O carro deve ter propriedades para:
 - marca
 - modelo
 - ano
-- velocidade atual. 
+- velocidade atual
 
 Em seguida, adicione os seguintes métodos ao objeto: 
 
 - um método que aumenta a velocidade atual
 - um método que diminui a velocidade atual 
-- um método que retorna a velocidade atual.
+- um método que retorna a velocidade atual
 
 

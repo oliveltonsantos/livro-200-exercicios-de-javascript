@@ -1,6 +1,10 @@
 /* Código extra */
 
-.btnNovoCadastro {
+.telaDeposito {
+    display: none;
+}
+
+.telaSaque {
     display: none;
 }
 

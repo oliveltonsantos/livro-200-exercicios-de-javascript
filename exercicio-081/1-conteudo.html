@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de logica de programação</title>
+    <link rel="stylesheet" href="3-estilo.css">
+</head>
+
+<body>
+    <section class="design-section">
+
+        <h1>Minha conta bancária</h1>
+
+        <!-- Tela para escolher as opções -->
+
+        <p class="telaOpcoes">O que você deseja fazer?</p>
+
+        <p class="telaOpcoes">
+            <label>
+                <input type="radio" name="opcao" value="deposito">
+                Depósito
+            </label>
+
+            <label>
+                <input type="radio" name="opcao" value="saque">
+                Saque
+            </label>
+        </p>
+
+        <button onclick="escolherOpcao()" class="btnEscolherOpcao telaOpcoes">Prosseguir</button>
+
+
+        <!-- Tela para fazer depósito -->
+
+        <p class="telaDeposito">Quanto deseja depositar?</p>
+
+        <p class="telaDeposito">Valor: <input type="number" name="valorDeposito" id="valorDeposito"></p>
+
+        <button onclick="fazerDeposito()" class="btnFazerDeposito telaDeposito">Fazer depósito</button>
+
+
+        <!-- Tela para fazer saque -->
+
+        <p class="telaSaque">Quanto deseja sacar?</p>
+
+        <p class="telaSaque">Valor: <input type="number" name="valorSaque" id="valorSaque"></p>
+
+        <button onclick="fazerSaque()" class="btnFazerSaque telaSaque">Fazer saque</button>
+
+    
+        <div class="mensagem"></div>
+
+
+    </section>
+
+    <script src="./2-codigo.js"></script>
+
+</body>
+
+</html>
