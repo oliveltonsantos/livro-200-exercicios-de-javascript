@@ -1,16 +1,13 @@
 // Tela de opções
 const telaOpcoes = document.querySelectorAll('.telaOpcoes')
 
-// Tela depósito
+// Tela de depósito
 const telaDeposito = document.querySelectorAll('.telaDeposito')
 const inputValorDeposito = document.getElementById('valorDeposito')
 
-// Tela saque
+// Tela de saque
 const telaSaque = document.querySelectorAll('.telaSaque')
 const inputValorSaque = document.getElementById('valorSaque')
-
-// Outros
-const mensagem = document.querySelector('.mensagem')
 
 
 // Objeto
