@@ -32,11 +32,11 @@ function dadosDoRetangulo() {
     const quadrado = Object.create(retangulo)
 
     // Substituindo o método para calcular a área 
-    quadrado.areaDoRetangulo = function() {
+    quadrado.areaDoRetangulo = function () {
         return this.largura * this.largura
     }
 
-    
+
     mensagem.innerHTML = `
         <p>Área retangulo = ${retangulo.areaDoRetangulo()}</p>
         <p>Área quadrado = ${quadrado.areaDoRetangulo()}</p>
