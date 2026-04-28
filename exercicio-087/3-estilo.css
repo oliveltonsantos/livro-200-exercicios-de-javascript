@@ -1,11 +1,7 @@
 /* Código extra */
 
-.btnNovoLivro {
+.btnNovaLista {
     display: none;
-}
-
-#containerCapa {
-    margin-top: 20px;
 }
 
 /* Código padrão */
@@ -68,5 +64,3 @@ button {
     cursor: pointer;
     margin: 10px;
 }
-
-
