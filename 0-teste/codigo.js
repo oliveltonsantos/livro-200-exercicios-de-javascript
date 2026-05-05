@@ -1,13 +1,14 @@
-let amigo = {
-    nome: 'José',
-    sexo: 'M',
-    peso: 85.4,
-    engordar(p = 0) {
-        console.log('Engordou')
-        // É uma palavra que faz autorreferência ao objeto
-        this.peso += p
-    }
-}
+let a = "oi"
+let b = "porta"
 
-amigo.engordar(10)
-console.log(`${amigo.nome} pesa ${amigo.peso}KG.`)
+console.log(a)
+console.log(b)
+console.log('---------------------')
+
+b = a
+
+console.log(b)
+
+a = b
+
+console.log(a)
