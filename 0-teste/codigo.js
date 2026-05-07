@@ -1,14 +1,37 @@
-let a = "oi"
-let b = "porta"
+const idadePassada = 16
 
-console.log(a)
-console.log(b)
-console.log('---------------------')
+verificarIdade(idadePassada)
 
-b = a
+function verificarIdade(idade) {
 
-console.log(b)
+    if (idade < 18) {
+        alert('Menor de idade')
+    }
 
-a = b
+    alert('Acesso liberado')
+}
 
-console.log(a)
+/*
+function verificarIdade(idade) {
+
+    if (idade < 18) {
+        alert('Menor de idade')
+    }
+
+    alert('Acesso liberado')
+}
+
+
+
+function verificarIdade(idade) {
+
+    if (idade < 18) {
+        alert('Menor de idade')
+        return
+    }
+
+    alert('Acesso liberado')
+}
+
+*/
+
