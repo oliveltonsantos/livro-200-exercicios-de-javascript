@@ -6,8 +6,8 @@ const btnNovaLista = document.querySelector('.btnNovaLista')
 const mensagem = document.querySelector('.mensagem')
 
 
-
 const listaPalavras = []
+
 
 // Função de alta ordem
 function filtrarStringsMaiores(lista, quantidade) {
@@ -21,13 +21,11 @@ function filtrarStringsMaiores(lista, quantidade) {
         }
     }
 
- 
     return listaPalavrasMaiores
-    
 }
 
-// Interação com usuário
 
+// Interação com usuário
 function processarDados() {
     const quantidade = Number(inputQuantidade.value)
 
@@ -41,11 +39,10 @@ function processarDados() {
     const exibirResultado = filtrarStringsMaiores(listaPalavras, quantidade)
 
     if (exibirResultado.length === 0) {
-         mensagem.innerHTML = `<p>Não foi encontrada nenhuma palavra maior que a quantidade digitada.</p>`
+        mensagem.innerHTML = `<p>Não foi encontrada nenhuma palavra maior que a quantidade digitada.</p>`
     } else {
-         mensagem.innerHTML = `<p>${exibirResultado.join(' > ')}</p>`
+        mensagem.innerHTML = `<p>${exibirResultado.join(' > ')}</p>`
     }
-   
 
     telaOpcao2.forEach(elemento => elemento.style.display = 'none')
 
@@ -85,7 +82,6 @@ function adicionarPalavra() {
 
 // Reset
 function novaLista() {
-
     btnNovaLista.style.display = 'none'
 
     mensagem.innerHTML = ''

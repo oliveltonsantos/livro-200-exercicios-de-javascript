@@ -23,19 +23,19 @@ function calcularMediana(lista) {
         }
     }
 
-    if (lista.length % 2 !== 0) {
-        const posicao = (lista.length + 1) / 2
-        return lista[posicao]
-    } else {
-        const posicao1 = lista.length / 2
-        const posicao2 = (lista.length / 2) + 1
-        const media = (lista[posicao1] + lista[posicao2]) / 2
-        return media
+    const meio = Math.floor(lista.length / 2)
+
+    // se for par
+    if (lista.length % 2 === 0) {
+        return (lista[meio - 1] + lista[meio]) / 2
     }
 
+    // se for ímpar
+    return lista[meio]
 }
 
 
+// Interação com usuário
 function processarValores() {
     mensagem.innerHTML = `<p>Mediana: ${calcularMediana(listaNumeros)}</p>`
 
@@ -47,7 +47,6 @@ function processarValores() {
 }
 
 
-// Interação com usuário
 function adicionarNumero() {
     if (inputNumero.value === '') {
         alert('Digite um número para adicionar.')
@@ -79,4 +78,3 @@ function novaLista() {
 
     mensagem.innerHTML = ''
 }
-    
