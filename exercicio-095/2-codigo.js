@@ -26,11 +26,7 @@ function concatenarListas(listaA, listaB) {
     }
 
     return listaC
-
-
 }
-
-
 
 
 // Interação com usuário
@@ -54,7 +50,7 @@ function adicionarNumero() {
             listaAtual = 'B'
             nomeDaLista = 'B'
 
-            mensagem.innerHTML = '' 
+            mensagem.innerHTML = ''
         }
     } else if (listaAtual === 'B') {
         listaB.push(numero)
@@ -65,10 +61,14 @@ function adicionarNumero() {
             alert('Lista B completa!')
 
             mensagem.innerHTML = `
-                <p>Lista A + B </p> 
-                <p>=</p>
+                <p>Lista A + B = </p> 
                 <p>Lista C: ${concatenarListas(listaA, listaB).join(' > ')}</p>
             `
+
+            inputNumero.disabled = true
+
+            btnAdicionarNumero.style.display = 'none'
+            btnNovaLista.style.display = 'inline-block'
         }
     }
 
@@ -76,6 +76,21 @@ function adicionarNumero() {
     inputNumero.focus()
 }
 
-// Reset
 
+// Reset
+function novaLista() {
+    listaA.length = 0
+    listaB.length = 0
+
+    listaAtual = 'A'
+    nomeDaLista = 'A'
+
+    inputNumero.disabled = false
+    inputNumero.focus()
+
+    btnAdicionarNumero.style.display = 'inline-block'
+    btnNovaLista.style.display = 'none'
+
+    mensagem.innerHTML = ''
+}
 
