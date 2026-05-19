@@ -1,6 +1,8 @@
 const inputNumero = document.getElementById('numero')
 const elementosListaA = document.querySelectorAll('.elementosListaA')
 const elementosListaB = document.querySelectorAll('.elementosListaB')
+const elementosRespostaFinal = document.querySelectorAll('.elementosRespostaFinal')
+const btnNovaAnalise = document.querySelector('.btnNovaAnalise')
 const mensagem = document.querySelector('.mensagem')
 
 
@@ -14,29 +16,26 @@ let preenchendoLista = 'A'
 let nomeDaLista = 'A'
 
 
-
 // Função de alta ordem
-function verificarSubarray() {
-    
+function verificarSubarray(listaA, listaB) {
+
     for (let i = 0; i < listaA.length; i++) {
-        
+        let tentativaAtual = true
 
+        for (let j = 0; j < listaB.length; j++) {
 
+            if (listaA[i + j] !== listaB[j]) {
+                tentativaAtual = false
+                break
+            }
+        }
 
+        if (tentativaAtual) {
+            return true
+        }
     }
-}
 
-
-
-// Preencher listas
-function adicionarNumeros(num, listaAtual) {
-
-    listaAtual.push(num)
-
-    mensagem.innerHTML = `<p>Lista ${nomeDaLista}: ${listaAtual.join(' > ')}</p>`
-
-    inputNumero.value = ''
-    inputNumero.focus()
+    return false
 }
 
 
@@ -58,11 +57,22 @@ function receberDados() {
 }
 
 
+function adicionarNumeros(num, listaAtual) {
+
+    listaAtual.push(num)
+
+    mensagem.innerHTML = `<p>Lista ${nomeDaLista}: ${listaAtual.join(' > ')}</p>`
+
+    inputNumero.value = ''
+    inputNumero.focus()
+}
+
+
 function proximaLista() {
     preenchendoLista = 'B'
     nomeDaLista = 'B'
 
-    elementosListaA.forEach(elemento => elemento.style.display = 'none');
+    elementosListaA.forEach(elemento => elemento.style.display = 'none')
     elementosListaB.forEach(elemento => elemento.style.display = 'inline-block')
 
     mensagem.innerHTML = ''
@@ -72,11 +82,38 @@ function proximaLista() {
 
 
 function processarListas() {
-    mensagem.innerHTML = `<p>${verificarSubarray(listaA, listaB)}</p>`
+
+    let exibirResposta = verificarSubarray(listaA, listaB)
+
+    if (exibirResposta === true) {
+        exibirResposta = 'O segundo array é um subarray do primeiro'
+    } else {
+        exibirResposta = 'O segundo array NÃO é um subarray do primeiro'
+    }
+
+    mensagem.innerHTML = `<p>${exibirResposta}</p>`
+
+    elementosListaB.forEach(elemento => elemento.style.display = 'none')
+    elementosRespostaFinal.forEach(elemento => elemento.style.display = 'none')
+
+    btnNovaAnalise.style.display = 'inline-block'
 }
 
 
-
 // Reset
+function novaAnalise() {
+    listaA.length = 0
+    listaB.length = 0
 
+    preenchendoLista = 'A'
+    nomeDaLista = 'A'
+
+    elementosListaA.forEach(elemento => elemento.style.display = 'inline-block')
+    elementosRespostaFinal.forEach(elemento => elemento.style.display = 'inline-block')
+
+    btnNovaAnalise.style.display = 'none'
+
+    inputNumero.focus()
+    mensagem.innerHTML = ''
+}
 
