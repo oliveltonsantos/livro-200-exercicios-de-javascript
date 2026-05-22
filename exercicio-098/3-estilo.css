@@ -1,6 +1,7 @@
 /* Código extra */
 
-.elementosTela2 {
+.elementosTela2,
+.btnNovaLista {
     display: none;
 }
 
