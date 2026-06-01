@@ -11,7 +11,25 @@
 <body>
     <section class="design-section">
 
-        <h1></h1>
+        <h1>Dividir uma lista em sublistas</h1>
+
+        <p class="telaDeOpcao1">Adicione números na lista abaixo:</p>
+
+        <p class="telaDeOpcao2">Agora escolha a quantidade máxima de números em cada sublista:</p>
+
+        <p class="telaDeOpcao1">Número: <input type="number" name="numero" id="numero"></p>
+
+        <p class="telaDeOpcao2">Quantidade máxima: <input type="number" name="quantidade" id="quantidade"></p>
+
+        <button onclick="adicionarNumeros()" class="telaDeOpcao1">Adicionar</button>
+
+        <button onclick="proximaOpcao()" class="telaDeOpcao1">Próxima opção</button>
+
+        <button onclick="processarLista()" class="telaDeOpcao2">Dividir lista</button>
+
+        <button onclick="novaLista()" class="btnNovaLista">Nova lista</button>
+
+        <div class="mensagem"></div>
 
     </section>
 

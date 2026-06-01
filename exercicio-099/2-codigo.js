@@ -53,7 +53,9 @@ function processarLista() {
 
     const exibirResultado = combinarNumeros(lista)
 
-    mensagem.innerHTML = `<p>${exibirResultado.join(' > ')}</p>`
+    mensagem.innerHTML = exibirResultado
+        .map(par => `<p>[${par.join(' - ')}]</p>`)
+        .join('')
 
     inputNumero.disabled = true
 
