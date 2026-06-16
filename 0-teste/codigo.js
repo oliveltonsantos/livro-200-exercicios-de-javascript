@@ -1,10 +1,12 @@
-function isSubarray (mainArray, subArray) {
-return mainArray.join(',').includes(subArray.join( ',' ));
+function formatarJson(obj) {
+    return JSON.stringify(obj, null, 2);
 }
 
-const mainArr = [1, 12, 3];
-const subArr1  = [2,3];
+const objetoTeste = { nome: "João", idade: 25 };
 
+console.log(formatarJson(objetoTeste));
 
-console .log(isSubarray(mainArr, subArr1)); // true
-console .log(isSubarray(mainArr, subArr2)); // false
+//"{
+// 'nome': 'João',
+// 'idade': 25
+//}"
