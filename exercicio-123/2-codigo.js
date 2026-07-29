@@ -7,8 +7,8 @@ const mensagem = document.querySelector('.mensagem')
 const listaNumeros = []
 
 
-// Função de alta ordem
-const somarNumeros = (lista) => lista.reduce((acumulador, numero) => acumulador + numero, 0)
+// Uso didático do rest
+const somarNumeros = (...lista) => lista.reduce((total, numero) => total + numero, 0)
 
 
 // Interação com usuário
@@ -29,6 +29,7 @@ function adicionar() {
     inputNum.focus()
 }
 
+
 function processarDados() {
     if (listaNumeros.length < 2) {
         alert('Adicione mais números na lista.')
@@ -36,7 +37,8 @@ function processarDados() {
         return
     }
 
-    const resultado = somarNumeros(listaNumeros)
+    // Uso do spread para fins didáticos
+    const resultado = somarNumeros(...listaNumeros)
 
     mensagem.innerHTML = `<p>Soma total: ${resultado}</p>`
 
@@ -46,5 +48,15 @@ function processarDados() {
 
 
 // Reset
+function novaSoma() {
+    listaNumeros.length = 0
 
+    esconderElementos.forEach(elemento => elemento.style.display = 'inline-block')
+    btnNovaSoma.style.display = 'none'
+
+    inputNum.value = ''
+    inputNum.focus()
+
+    mensagem.innerHTML = ''
+}
 
