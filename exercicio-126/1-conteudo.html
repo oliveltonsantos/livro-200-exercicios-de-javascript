@@ -11,17 +11,19 @@
 <body>
     <section class="design-section">
 
-        <h1>Juntando listas de números</h1>
+        <h1>Separando números e palavras</h1>
 
-        <p class="esconderElementos">Preencha a lista A e B com 3 números cada:</p>
+        <p class="esconderElementos">Adicione números e palavras na lista abaixo:</p>
 
-        <p class="esconderElementos">Número: <input type="number" name="numero" id="numero"></p>
+        <p class="esconderElementos">Valor: <input type="text" name="valor" id="valor"></p>
 
         <button onclick="adicionar()" class="esconderElementos">Adicionar</button>
 
+        <button onclick="processarDados()" class="esconderElementos">Separar valores</button>
+
         <div class="mensagem"></div>
 
-        <button onclick="reiniciar()" class="btnReiniciar">Reiniciar</button>
+        <button onclick="novaLista()" class="btnNovaLista">Nova lista</button>
 
     </section>
 

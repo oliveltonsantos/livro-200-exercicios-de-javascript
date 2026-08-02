@@ -1,12 +1,5 @@
-function formatarJson(obj) {
-    return JSON.stringify(obj, null, 2);
+function filtrarNumeros (...args) {
+return args.filter(arg => typeof arg === "number");
 }
-
-const objetoTeste = { nome: "João", idade: 25 };
-
-console.log(formatarJson(objetoTeste));
-
-//"{
-// 'nome': 'João',
-// 'idade': 25
-//}"
+// Testes
+console.log(filtrarNumeros(1, "a", 3, "b", 5)); // [1, 3, 5]
