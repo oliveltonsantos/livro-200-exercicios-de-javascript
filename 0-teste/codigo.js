@@ -1,6 +1,14 @@
-function criarCarro(modelo, marca = "Desconhecido", ano = new Date(). getFullYear()) {
-return { marca, modelo, ano };
+function filtrarPorChaves(arrayObjetos, chaves) {
+    return arrayObjetos.map(obj => {
+        let novoObj = {};
+
+        chaves.forEach(chave => {
+            if (obj[chave] !== undefined) novoObj[chave] = obj[chave];
+        });
+        return novoObj;
+    });
 }
+
 // Testes
-console.log(criarCarro("Civic")); // { marca: "Desconhecido", modelo: "Civic", ano: 2023 }
-console.log(criarCarro("Civic", "Honda", 2020)); // { marca: "Honda", modelo: "Civic", ano: 2020}
+const data = [{ nome: "Lucas", idade: 30, cidade: "São Paulo" }, { nome: "Ana", idade: 25 }];
+console.log(filtrarPorChaves(data, ["nome", "cidade"])); // [{ nome: "Lucas", cidade: "São Paulo" }, { nome: "Ana" }]
